@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function QuestionList() {
+function QuestionList({ quiz, setQuiz }) {
+  useEffect(() => {
+    fetch("http://localhost:4000/questions")
+      .then((res) => res.json())
+      .then((data) => setQuiz(data));
+  }, []);
+  const newQuizzes = quiz.map((oneQuiz) => {
+    return <li key={oneQuiz.id}>{oneQuiz.prompt}</li>;
+  });
+
   return (
     <section>
       <h1>Quiz Questions</h1>
-      <ul>{/* display QuestionItem components here after fetching */}</ul>
+      <ul>{newQuizzes}</ul>
     </section>
   );
 }
