@@ -8,7 +8,7 @@ function QuestionList({ quiz, setQuiz }) {
       .then((data) => setQuiz(data));
   }, [setQuiz]);
 
-  const handeDelete = (id) => {
+  const handleDelete = (id) => {
     fetch(`http://localhost:4000/questions/${id}`, {
       method: "DELETE",
     })
@@ -20,7 +20,7 @@ function QuestionList({ quiz, setQuiz }) {
       <QuestionItem
         key={oneQuiz.id}
         question={oneQuiz}
-        onDelete={handeDelete}
+        onDelete={handleDelete}
       />
     );
   });
