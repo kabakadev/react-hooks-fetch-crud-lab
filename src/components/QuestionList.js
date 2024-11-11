@@ -13,14 +13,25 @@ function QuestionList({ quiz, setQuiz }) {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then(setQuiz(quiz.filter((question) => question.id !== id)));
+      .then(
+        setQuiz((prevQuiz) => prevQuiz.filter((question) => question.id !== id))
+      );
   };
+  const handleUpdate = (updatedQuestion) => {
+    setQuiz(
+      quiz.map((question) =>
+        question.id === updatedQuestion.id ? updatedQuestion : question
+      )
+    );
+  };
+
   const newQuizzes = quiz.map((oneQuiz) => {
     return (
       <QuestionItem
         key={oneQuiz.id}
         question={oneQuiz}
         onDelete={handleDelete}
+        onUpdate={handleUpdate}
       />
     );
   });

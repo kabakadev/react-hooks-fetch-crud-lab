@@ -9,7 +9,10 @@
         "onChange",
         "onForm"
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "correctObject": {
+        "correctIndex": 2
+      }
     },
     {
       "id": 4,
@@ -42,7 +45,10 @@
         "reactive",
         "controlled"
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "correctObject": {
+        "correctIndex": 2
+      }
     },
     {
       "prompt": "What is the capital city of Kenya?",
@@ -53,7 +59,10 @@
         "Mombasa"
       ],
       "correctIndex": 0,
-      "id": 7
+      "id": 7,
+      "correctObject": {
+        "correctIndex": 3
+      }
     },
     {
       "prompt": "What is the capital city of Kenya?",
@@ -63,19 +72,11 @@
         "Nakuru",
         "Mombasa"
       ],
-      "correctIndex": 0,
-      "id": 8
-    },
-    {
-      "prompt": "what is the fastest car brand in the world?",
-      "answers": [
-        "Bugatti",
-        "Koenigsegg",
-        "McLaren",
-        "Pagani"
-      ],
-      "correctIndex": "1",
-      "id": 9
+      "correctIndex": 3,
+      "id": 8,
+      "correctObject": {
+        "correctIndex": 3
+      }
     }
   ]
 }
