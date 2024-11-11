@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import QuestionItem from "./QuestionItem";
 
 function QuestionList({ quiz, setQuiz }) {
   useEffect(() => {
@@ -15,7 +16,13 @@ function QuestionList({ quiz, setQuiz }) {
       .then(setQuiz(quiz.filter((question) => question.id !== id)));
   };
   const newQuizzes = quiz.map((oneQuiz) => {
-    return <li key={oneQuiz.id}>{oneQuiz.prompt}</li>;
+    return (
+      <QuestionItem
+        key={oneQuiz.id}
+        question={oneQuiz}
+        onDelete={handeDelete}
+      />
+    );
   });
 
   return (
